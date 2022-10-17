@@ -1,10 +1,10 @@
-package com.wcci.reviews;
+package com.cookies.cookieReviews;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ReviewsApplicationTests {
+class ReviewReviewsApplicationTests {
 
 	@Test
 	void contextLoads() {

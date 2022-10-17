@@ -1,1 +1,4 @@
-### Put your HTTP Requests here
+###
+GET http://localhost:8080/cookies
+###
+Get http://localhost:8080/cookies/1
