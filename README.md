@@ -1,34 +1,93 @@
-# Reviews API
-Opinions. You know the saying...everyone has one. And the Internet has made them easier to consume, or ignore.
+# **Cookie Reviews API**
+#### **Introduction**
+Our goal is to review different cookie flavors. An author can leave a short review of a cookie flavor on a 0-10 rating scale.
 
-Acquisitions, Inc. has many, many products from its years of, well, acquiring things. They have asked you to build a reviews API for some of their current products. The data gathered will help them gain insight into their customer base and the products they have come to enjoy...or enjoy less.
+We can assign a review to a category (for example "American Classic" or "Seasonal"), and we can add hashtags (a short description such as "ChocolateTherapy"). We are able to find all reviews from a category or a hashtag if we choose to do so.
 
-Acquisitions, Inc. requires:
+#### **Instructions**
+1. Open CookieReviewsApplication in IntelliJ IDEA
+    * Run the application
+2. While the application is running, open Visual Studio Code.
+    * Go to File - Open - review-api-cheyenneabel - build - resources
+    
+---
+**To Access Reviews**
 
-- Appropriate use of Git and access to your application on GitHub
-- Useful instructions in the form of a README.md file
-- Ability for Users to perform the following functions using a REST Client:
-  - View review by Id.
-  - View reviews by Category
-  - Add new reviews.
-  - Assign hashtags to reviews.
-  - Create new hashtags.
-  - View all reviews associated with a hashtag.
-- The view will be the REST Client.
-- You choose what it is you’ll be reviewing
+Send GET Request for "reviews" to see all reviews
+_OR_ for "reviews/review Id number" to find a specific review by Id
+    
+    * example:  ###
+                GET http://localhost:8080/reviews
 
-## Entities
 
-- Review
-  - Decide on what type of product you’ll be reviewing.
-  - Each review should belong to a single category.
-  - A review can have any number of hashtags associated with it
-  - Should have an author field
-  - Should have a field to hold the text of the review
-  - Should have some kind of rating system. For instance, a 5 star rating.
-- Category
-  - Based on the product you choose, should be a category of that product. For instance, if you chose music, a category could be Classic Rock.
-  - Categories can be assigned to any number of reviews.
-- Hashtag
-  - Should describe a product in a few words or less, like Hashtags on social media.
-  - A hashtag can have any number of reviews assigned to it.
+
+**To Access Categories**
+
+Send GET Request for "categories" to see all categories
+_OR_ for "categories/category Id number" to find a specific category by Id
+
+    * example: ###
+               GET http://localhost:8080/categories
+
+**To Access Hashtags**
+
+Send GET Request to "hashtags" _OR_ to "hashtags/hashtag Id number" to find a specific hashtag by Id and all reviews
+
+     * example:  ###
+                 GET http://localhost:8080/hashtags
+
+**To Add a New Review**
+
+Send POST Request with Content-Type application/json. Add your review inside curly brackets with the fields shown in the example. Be sure to include empty array list in the hashtag field.
+
+    * example: ###
+               POST http://localhost:8080/reviews
+               Content-Type: application/json
+                { 
+                    "author": "Cheyenne",
+                    "rating": "10/10",
+                    "flavor": "White Chocolate Macadamia",
+                    "reviewText": "Full of elegant texture and sweetness.",
+                    "hashtag": [ ]
+                }
+ 
+**To Add a New Category**
+
+Send POST Request with Content-Type application/json. Add your category inside curly brackets with the fields shown in the example:
+
+    * example: ###
+               POST http://localhost:8080/categories
+               Content-Type: application/json
+
+               {
+                   "categoryName": "Seasonal",
+                   "occasion": "Valentine's Day",
+                   "reviews": [ ]
+               }
+
+   * **To Add a Category To a Review:** Send PUT Request to "categories/categoryIdNumber/addToReview/reviewIdNumber
+
+**To Add a New Hashtag**
+
+Send POST Request with Content-Type application/json. Add your hashtag inside the curly brackets with the field shown in the example:
+
+    * example: ###
+               POST http://localhost:8080/hashtags
+               Content-Type: application/json
+
+               {
+                  "description": "hashtagGoesHere"
+               }
+    
+  * **To Add a Hashtag To a Review:** Send PUT Request to "hashtags/hashtagIdNumber/addToReview/reviewIdNumber
+
+  * **To Access Reviews by Hashtag:** Send GET Request to "hashtags/hashtagIdNumber/getReviews"
+
+
+
+
+
+
+
+
+

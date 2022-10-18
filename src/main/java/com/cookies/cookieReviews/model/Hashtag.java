@@ -24,7 +24,12 @@ public class Hashtag {
         this.description = description;
         this.reviews = Arrays.asList(reviews);
     }
+    public Hashtag() {
 
+    }
+    public void addReviewToHashtag(Review review) {
+        reviews.add(review);
+    }
     public long getId() {
         return id;
     }

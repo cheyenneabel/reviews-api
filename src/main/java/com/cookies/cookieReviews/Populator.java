@@ -32,13 +32,13 @@ public class Populator implements CommandLineRunner {
         Category category3 = new Category("French", "Treat");
         categoryRepo.save(category3);
 
-        Review review1 = new Review(7, "Oreo", "Sandwich", category1);
+        Review review1 = new Review("Cheyenne", "7/10", "Oreo", "Delicious and popular sandwich cookie for any occasion", category1);
         reviewRepo.save(review1);
-        Review review2 = new Review(10, "Chocolate Chip", "Drop Cookie", category2);
+        Review review2 = new Review("Cheyenne", "10/10", "Chocolate Chip", "Best when fresh baked. A perfect afternoon treat.", category2);
         reviewRepo.save(review2);
-        Review review3 = new Review(4, "Macaron", "Sandwich", category3);
+        Review review3 = new Review("Cheyenne", "4/10", "Macaron", "This is a great cookie to give as a gift. Fancy looking, but average taste.", category3);
         reviewRepo.save(review3);
-        Review review4 = new Review(7, "Brownie", "bar", category2);
+        Review review4 = new Review("Cheyenne", "7/10", "Brownie", "Brownies can vary in texture and flavor, but they're usually always good.", category2);
         reviewRepo.save(review4);
 
         Hashtag hashtag1 = new Hashtag("ChocolateTherapy", review2);

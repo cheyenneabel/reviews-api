@@ -31,7 +31,6 @@ public class Category {
         return occasion;
     }
 
-
     public Collection<Review> getReviews() {
         return reviews;
     }
