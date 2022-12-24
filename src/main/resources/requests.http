@@ -1,4 +1,24 @@
-###
-GET http://localhost:8080/cookies
-###
-Get http://localhost:8080/cookies/1
+### Get all organic cats
+GET http://localhost:8080/organicCats
+
+### Get cat by id
+GET http://localhost:8080/organicCats/1
+
+### Add new cat
+POST http://localhost:8080/organicCats
+
+### clean cat litter
+POST http://localhost:8080/organicCats/1/cleanLitter
+
+### play with cat
+POST http://localhost:8080/organicCats/1/play
+
+### give cat water
+POST http://localhost:8080/organicCats/1/giveCatDrink
+
+### feed cat
+POST http://localhost:8080/organicCats/1/feedCat
+
+### show status
+POST http://localhost:8080/organicCats/1/showStatus
+
